@@ -10,10 +10,14 @@
 
 <script>
     export default{
-        props:['comment',deleteComment],
+        props:['comment','deleteComment','index'],
         methods:{
             deleteItem(){
-
+              const {comment,index,deleteComment} = this
+              if(window.confirm('确认删除'+comment.name+'的评论嘛?')){
+                deleteComment(index)
+              }
+              
             }
         }
     }
