@@ -12,7 +12,7 @@
       </header>
       <div class="container">
         <Add/>
-        <List/>
+        <List :comments='comments'/>
       </div>
     </div>
   </div>  
@@ -23,6 +23,15 @@
   import List from './components/List.vue'
   
   export default{
+    data(){
+      return{
+        comments:[
+        {name:'bob',content:'1234'},
+        {name:'nancy',content:'129'},
+        {name:'tom',content:'0989'},
+      ]
+      }
+    },
     components:{
       Add,
       List
